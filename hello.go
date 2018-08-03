@@ -1,10 +1,16 @@
 package main
 
-import "fmt"
+import (
+	//"hello/app"
+	"hello/app"
+	"hello/config"
+)
 
 func main() {
+	config := config.GetConfig()
 
-	name := "Larry"
-	fmt.Printf(name)
+	app := &app.App{}
+	app.Initialize(config)
+	app.Run(":3000")
 
 }
